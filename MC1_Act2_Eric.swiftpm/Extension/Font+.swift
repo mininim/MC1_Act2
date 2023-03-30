@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 extension Font {
     static func registerFonts() {
