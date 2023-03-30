@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct TopLayer: View {
+    
+    @Binding var currentMember: MemberData
+    
     var body: some View {
         
         HStack {//메인, 개인별 바꿔야할 페이지
-            Board()
+            Board(currentMember: self.$currentMember)
                 .frame(width: 532.67, height: 251)
             
             
             Spacer().frame(width: 120)
             
-            IntroductionPage()
+            IntroductionPage(currentMember: self.$currentMember)
                 .frame(width: 478.19, height: 251)
 
         }
@@ -25,9 +28,9 @@ struct TopLayer: View {
     }
 }
 
-struct TopLayer_Previews: PreviewProvider {
-    static var previews: some View {
-        TopLayer()
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct TopLayer_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TopLayer()
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}

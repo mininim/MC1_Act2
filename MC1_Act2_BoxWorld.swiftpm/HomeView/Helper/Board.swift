@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Board: View {
+    
+    @Binding var currentMember : MemberData
+       
     var body: some View {
         //NavigationView {
         VStack(alignment: .leading) {
@@ -21,8 +24,33 @@ struct Board: View {
             Divider()
                 
                 VStack {
-                    MakePost()
-                }
+                    
+                    ForEach(currentMember.articles, id: \.self.id) { art in
+                        
+                        NavigationLink {
+                            
+                            if currentMember.member.name == "BOX" {
+                                DetailView_Jerry().navigationBarBackButtonHidden(true)
+                                    .onAppear {
+                                        SoundPlayer.shared.stop()
+                                        SoundPlayer.shared.playSound(named: "8_JerrySSul", withExtension: ".mp3")
+                                    }
+                                
+                                                                
+                            }else{
+                                DetailView()
+                            }
+                            
+                               } label: {
+                                   PostFormat(postName: art.name)
+                           }
+                        
+                    }
+                    
+                    Spacer()
+                }.frame(height: 199)
+            
+            
         
             
             
@@ -36,48 +64,51 @@ struct Board: View {
     }
 }
 
-
-struct MakePost: View {
+struct Posts: View {
     
+    @Binding var currentMember : MemberData
     
     var body: some View {
+
         
         NavigationLink {
             DetailView()
                 .navigationBarBackButtonHidden(true)
                } label: {
-                   PostFormat(postName: "이런 짜란다를 바란게 아닌데,,,?")
+                   PostFormat(postName: currentMember.articles[0].name)
            }
         NavigationLink {
             DetailView()
                 .navigationBarBackButtonHidden(true)
                } label: {
-                   PostFormat(postName: "지니는 공주병 말기인거 같다.")
+                   PostFormat(postName: currentMember.articles[1].name)
            }
         NavigationLink {
             DetailView()
                 .navigationBarBackButtonHidden(true)
                } label: {
-                   PostFormat(postName: "난 지금 미쳐가고 있다. 이 헤드폰에 내 모든 몸과 영혼을...")
+                   PostFormat(postName: currentMember.articles[2].name)
            }
         NavigationLink {
             DetailView()
                 .navigationBarBackButtonHidden(true)
                } label: {
-                   PostFormat(postName: "사람이 어떻게 그래요?")
+                   PostFormat(postName: currentMember.articles[3].name)
            }
         NavigationLink {
             DetailView()
                 .navigationBarBackButtonHidden(true)
                } label: {
-                   PostFormat(postName: "3테크 1디자인 1도메인 1일반인")
+                   PostFormat(postName: currentMember.articles[3].name)
            }
         NavigationLink {
             DetailView()
                 .navigationBarBackButtonHidden(true)
                } label: {
-                   PostFormat(postName: "커닝시티 뒷골목의 지니...일요일! 지니는 오랜만에 친구들...")
+                   PostFormat(postName: currentMember.articles[3].name)
            }
+        
+        
     }
 }
 
@@ -107,12 +138,127 @@ struct PostFormat: View {
 }
 
 
+//
+//struct Board_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Board(currentarticles.articles)
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
 
-struct Board_Previews: PreviewProvider {
-    static var previews: some View {
-        Board()
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
-
-
+//
+//
+//struct TeamPost: View {
+//
+//    var body: some View {
+//
+//
+//
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().team.articles[0].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().team.articles[1].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().team.articles[2].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().team.articles[3].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().team.articles[4].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().team.articles[5].name)
+//           }
+//
+//
+//    }
+//}
+//
+//
+//struct EricPost: View {
+//
+//    var body: some View {
+//
+//
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[0].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[1].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[2].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[3].name)
+//           }
+//
+//    }
+//}
+//
+//
+//struct JerryPost: View {
+//
+//    var body: some View {
+//
+//
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[0].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[1].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[2].name)
+//           }
+//        NavigationLink {
+//            DetailView()
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: DataModal().eric.articles[3].name)
+//           }
+//
+//    }
+//}

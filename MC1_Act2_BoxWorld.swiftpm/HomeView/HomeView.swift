@@ -3,6 +3,15 @@ import SwiftUI
 struct HomeView: View {
     
     @State var isLoading: Bool = true
+    @State var currentMember: MemberData = DataModal().team
+    
+    init(isLoading: Bool = true, currentMember: MemberData = DataModal().team) {
+        self.isLoading = isLoading
+        self.currentMember = currentMember
+        
+        SoundPlayer.shared.playSound(named: "1_loading", withExtension: ".mp3")
+        
+    }
     
     var launchScreenView: some View {
         
@@ -37,13 +46,12 @@ struct HomeView: View {
                     
                     BackLine()
                     
-                    
                     VStack(alignment: .leading) {
                         
-                        TopLayer()
+                        TopLayer(currentMember: self.$currentMember)
                         
                         VStack(alignment: .leading, spacing: 0){
-                            Title()
+                            Title(currentMember: self.$currentMember)
                                 .frame(width: 1225.81, height: 50)
                             
                             MiniRoom()
@@ -51,22 +59,80 @@ struct HomeView: View {
                         }
                     }
                     
-                    PutInMinimi(imagename: "greed")
-                        .offset(x: 150, y: 170)
+                    Button {
+                        print("greed")
+                        currentMember = DataModal().greed
+                        SoundPlayer.shared.stop()
+                        SoundPlayer.shared.playSound(named: "7_GreedHi", withExtension: ".mp3")
+                    } label: {
+                        Image("greed")
+                            .resizable()
+                            .frame(width: 105, height: 180)
+                    }
+                    .offset(x: 150, y: 170)
                     
-                    PutInMinimi(imagename: "jerry")
+                    
+                    Button {
+                        print("jerry")
+                        
+                        
+                        currentMember = DataModal().jerry
+                        SoundPlayer.shared.stop()
+                        SoundPlayer.shared.playSound(named: "2_JerryHi", withExtension: ".mp3")
+                    } label: {
+                        Image("jerry")
+                            .resizable()
+                            .frame(width: 105, height: 180)
+                    }
                         .offset(y:40)
                     
-                    PutInMinimi(imagename: "jinnie")
-                        .offset(x: 350, y: 130)
+                    Button {
+                        print("jinnie")
+                        currentMember = DataModal().jinnie
+                        SoundPlayer.shared.stop()
+                        SoundPlayer.shared.playSound(named: "6_JinnieHi", withExtension: ".mp3")
+                    } label: {
+                        Image("jinnie")
+                            .resizable()
+                            .frame(width: 105, height: 180)
+                    }
+                    .offset(x: 350, y: 130)
                     
-                    PutInMinimi(imagename: "eric")
-                        .offset(x: 500, y: 300)
+                    Button {
+                        print("eric")
+                        currentMember = DataModal().eric
+                        SoundPlayer.shared.stop()
+                        SoundPlayer.shared.playSound(named: "5_EricHi", withExtension: ".mp3")
+                        
+                    } label: {
+                        Image("eric")
+                            .resizable()
+                            .frame(width: 105, height: 180)
+                    }
+                    .offset(x: 500, y: 300)
                     
-                    PutInMinimi(imagename: "moro")
+                    Button {
+                        print("moro")
+                        currentMember = DataModal().moro
+                        SoundPlayer.shared.stop()
+                        SoundPlayer.shared.playSound(named: "4_MoroHi", withExtension: ".mp3")
+                    } label: {
+                        Image("moro")
+                            .resizable()
+                            .frame(width: 105, height: 180)
+                    }
                         .offset(x: -180, y: 140)
                     
-                    PutInMinimi(imagename: "moana")
+                    Button {
+                        print("moana")
+                        currentMember = DataModal().moana
+                        SoundPlayer.shared.stop()
+                        SoundPlayer.shared.playSound(named: "3_MoanaHi", withExtension: ".mp3")
+                    } label: {
+                        Image("moana")
+                            .resizable()
+                            .frame(width: 105, height: 180)
+                    }
                         .offset(x: -430, y: 240)
                     
                 }//Zstack
@@ -75,6 +141,7 @@ struct HomeView: View {
             
             
         }
+        
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                 withAnimation {  isLoading.toggle() }
@@ -85,18 +152,21 @@ struct HomeView: View {
 }
 
 
-
 struct PutInMinimi: View {
     
     var imagename : String
     
     var body: some View {
         
-        Button(action: {print("Button1")}){
+        Button {
+            print("refresh")
+        } label: {
             Image(imagename)
                 .resizable()
                 .frame(width: 105, height: 180)
         }
+
+        
         
     }
 }

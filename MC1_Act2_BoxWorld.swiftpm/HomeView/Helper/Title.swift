@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Title: View {
+    @Binding var currentMember: MemberData
+    
     var body: some View {
         
         HStack {
@@ -24,6 +26,11 @@ struct Title: View {
             
             Button(action: {
                 print("BoxWorld")
+                
+                SoundPlayer.shared.stop()
+                currentMember = DataModal().team
+                
+                
                 }, label: {
                 Text("빡스조의 깔깔대는 나날들")
                     .font(.mo(.regular, size: 24))
@@ -36,7 +43,7 @@ struct Title: View {
 
 struct Title_Previews: PreviewProvider {
     static var previews: some View {
-        Title()
+        Title(currentMember: .constant(DataModal().moro))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

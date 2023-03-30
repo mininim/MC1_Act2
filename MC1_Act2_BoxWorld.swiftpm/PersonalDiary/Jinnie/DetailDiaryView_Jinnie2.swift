@@ -1,14 +1,15 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Eric Lee on 2023/03/30.
 //
 
 import SwiftUI
 
-struct DetailDiaryView: View {
-    @State var currentDate: Int = 1
+struct DetailDiaryView_Jinnie2: View {
+    @State
+    var currentDate: Int = 1
     
     var body: some View {
         
@@ -74,6 +75,7 @@ struct DetailDiaryView: View {
                                 dateButton(date: 12, isActive: false, currentDate: $currentDate)
                                 dateButton(date: 13, isActive: false, currentDate: $currentDate)
                                 dateButton(date: 14, isActive: true, currentDate: $currentDate)
+                                
                                 dateButton(date: 15, isActive: false, currentDate: $currentDate)
                                 dateButton(date: 16, isActive: false, currentDate: $currentDate)
                                 dateButton(date: 17, isActive: false, currentDate: $currentDate)
@@ -94,11 +96,6 @@ struct DetailDiaryView: View {
                         .frame(width: 552, height: 80)
                         .padding(.leading, 30)
                         
-
-                       
-                        
-                        
-                        
                         
                     }
                     
@@ -116,22 +113,35 @@ struct DetailDiaryView: View {
                     
                 }
                 
-                Group{
-                    Text("MC1 \(currentDate)")
+                VStack{
+                    Text("MC1 14")
                         .font(Font.custom("DungGeunMo", size: 32))
                         .foregroundColor(Color.blue02)
-                        
+                        .padding(EdgeInsets(top: -30, leading: 0, bottom: 20, trailing: 0))
+
+                        Text("난 곤듀니까^^")
+                                .font(Font.custom("DungGeunMo", size: 32))
+                                .foregroundColor(.gray)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                   
+                            
+                    
+                    Text("세상은 나를 피곤하게 한다. 나는 곤듀인데.. 왜 사람들은 몰라줄까?\n브루니? 어제 그 사람은 나를 피오나라고 불렀다.\n내 가만 두지 않을게야….\n비록 우리 엄마도 나를 곤듀라고 부르지 않지만..\n아니 나를 뭐라고 부르지도 않지만\n누가 뭐래도 나는 이 시대의 하나뿐인 곤듀다.")
+                        .kerning(3)
+                        .tracking(7)
+                        .font(.system(size: 25))
+                        .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 10))
                     
                 }
                     .frame(width: 781, height: 661)
                     .overlay {
-                        
                         RoundedRectangle(cornerRadius: 3)
                             .stroke(Color.gray04, lineWidth: 1)
                             .frame(width: 781, height: 661)
                         
                         
                     }
+                
                 
                 
                 
@@ -148,36 +158,37 @@ struct DetailDiaryView: View {
     }
 }
 
-struct dateButton: View{
-    
-    var date : Int
-    var isActive: Bool
+//struct dateButton: View{
+//
+//    var date : Int
+//    var isActive: Bool
+//
+//    @Binding var currentDate: Int
+//
+//    var body: some View {
+//
+//
+//
+//        Button {
+//            print("day \(date) 클릭")
+//            currentDate = date
+//        } label: {
+//
+//            Text("day\(date)")
+//                .font(Font.custom("DungGeunMo", size: 20))
+//                .foregroundColor(isActive ? Color.black01 : Color.gray01 )
+//                .frame(width: 50)
+//
+//        }
+//
+//
+//    }
+//
+//}
 
-    @Binding var currentDate: Int
-    
-    var body: some View {
-        
-        
-        
-        Button {
-            print("day \(date) 클릭")
-            currentDate = date
-        } label: {
-            
-            Text("day\(date)")
-                .font(Font.custom("DungGeunMo", size: 20))
-                .foregroundColor(isActive ? Color.black01 : Color.gray01 )
-                .frame(width: 50)
-            
-        }
-        
-        
-    }
-    
-}
-
-struct DetailDiaryView_Previews: PreviewProvider {
+struct DetailDiaryView_Jinnie2_Previews: PreviewProvider {
     static var previews: some View {
-        DetailDiaryView()
+        DetailDiaryView_Jinnie2()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
