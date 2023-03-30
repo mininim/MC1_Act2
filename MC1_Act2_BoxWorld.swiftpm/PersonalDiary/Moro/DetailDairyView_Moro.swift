@@ -111,10 +111,14 @@ struct DetailDiaryView_Moro: View {
                 }
                 
                 VStack{
-                    Text("MC1 \(currentDate)")
-                        .font(Font.custom("DungGeunMo", size: 32))
-                        .foregroundColor(Color.blue02)
-                        .padding(EdgeInsets(top: -30, leading: 0, bottom: 20, trailing: 0))
+                    HStack{
+                        Text("MC1 day\(currentDate)")
+                            .font(Font.custom("DungGeunMo", size: 32))
+                            .foregroundColor(Color.blue02)
+                            .padding(.leading, 43)
+                            .padding(.top, 30.52)
+                        Spacer()
+                    }
                     
                     
                     NavigationLink(destination: DetailView_Eric().navigationBarBackButtonHidden(true)
@@ -134,6 +138,10 @@ struct DetailDiaryView_Moro: View {
                         .tracking(5)
                         .font(.system(size: 25))
                         .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 10))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(25)
+                    
+                    Spacer()
                     
                 }
                     .frame(width: 781, height: 661)
@@ -191,7 +199,7 @@ struct DetailDiaryView_Moro: View {
 
 struct DetailDiaryView_Moro_Previews: PreviewProvider {
     static var previews: some View {
-        DetailDiaryView()
+        DetailDiaryView_Moro()
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

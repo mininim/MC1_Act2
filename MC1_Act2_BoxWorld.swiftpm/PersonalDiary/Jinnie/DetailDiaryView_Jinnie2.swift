@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailDiaryView_Jinnie2: View {
     @State
-    var currentDate: Int = 1
+    var currentDate: Int = 14
     
     var body: some View {
         
@@ -114,10 +114,14 @@ struct DetailDiaryView_Jinnie2: View {
                 }
                 
                 VStack{
-                    Text("MC1 14")
-                        .font(Font.custom("DungGeunMo", size: 32))
-                        .foregroundColor(Color.blue02)
-                        .padding(EdgeInsets(top: -30, leading: 0, bottom: 20, trailing: 0))
+                    HStack{
+                        Text("MC1 day\(currentDate)")
+                            .font(Font.custom("DungGeunMo", size: 32))
+                            .foregroundColor(Color.blue02)
+                            .padding(.leading, 43)
+                            .padding(.top, 30.52)
+                        Spacer()
+                    }
 
                         Text("난 곤듀니까^^")
                                 .font(Font.custom("DungGeunMo", size: 32))
@@ -129,8 +133,13 @@ struct DetailDiaryView_Jinnie2: View {
                     Text("세상은 나를 피곤하게 한다. 나는 곤듀인데.. 왜 사람들은 몰라줄까?\n브루니? 어제 그 사람은 나를 피오나라고 불렀다.\n내 가만 두지 않을게야….\n비록 우리 엄마도 나를 곤듀라고 부르지 않지만..\n아니 나를 뭐라고 부르지도 않지만\n누가 뭐래도 나는 이 시대의 하나뿐인 곤듀다.")
                         .kerning(3)
                         .tracking(7)
-                        .font(.system(size: 25))
+                        .font(Font.custom("NotoSansKR-Regular", size: 24))
                         .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 10))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(25)
+                    
+                    Spacer()
+                    
                     
                 }
                     .frame(width: 781, height: 661)

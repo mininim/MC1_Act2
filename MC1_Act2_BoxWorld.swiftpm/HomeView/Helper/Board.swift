@@ -29,7 +29,7 @@ struct Board: View {
                         
                         NavigationLink {
                             
-                            if art.id == 17 {
+                            if art.id == 0 {
                                 DetailView_Jerry().navigationBarBackButtonHidden(true)
                                     .onAppear {
                                         SoundPlayer.shared.stop()
@@ -61,7 +61,7 @@ struct Board: View {
                                 DetailView_Jinnie2()
                                     .navigationBarBackButtonHidden(true)
                             }else{
-                                DetailView()
+                                DetailView(currentMember: self.$currentMember)
                                     .navigationBarBackButtonHidden(true)
                                     .onAppear {
                                         SoundPlayer.shared.stop()
@@ -93,53 +93,53 @@ struct Board: View {
     }
 }
 
-struct Posts: View {
-    
-    @Binding var currentMember : MemberData
-    
-    var body: some View {
-
-        
-        NavigationLink {
-            DetailView()
-                .navigationBarBackButtonHidden(true)
-               } label: {
-                   PostFormat(postName: currentMember.articles[0].name)
-           }
-        NavigationLink {
-            DetailView()
-                .navigationBarBackButtonHidden(true)
-               } label: {
-                   PostFormat(postName: currentMember.articles[1].name)
-           }
-        NavigationLink {
-            DetailView()
-                .navigationBarBackButtonHidden(true)
-               } label: {
-                   PostFormat(postName: currentMember.articles[2].name)
-           }
-        NavigationLink {
-            DetailView()
-                .navigationBarBackButtonHidden(true)
-               } label: {
-                   PostFormat(postName: currentMember.articles[3].name)
-           }
-        NavigationLink {
-            DetailView()
-                .navigationBarBackButtonHidden(true)
-               } label: {
-                   PostFormat(postName: currentMember.articles[3].name)
-           }
-        NavigationLink {
-            DetailView()
-                .navigationBarBackButtonHidden(true)
-               } label: {
-                   PostFormat(postName: currentMember.articles[3].name)
-           }
-        
-        
-    }
-}
+//struct Posts: View {
+//
+//    @Binding var currentMember : MemberData
+//
+//    var body: some View {
+//
+//
+//        NavigationLink {
+//            DetailView(currentMember: self.$currentMember)
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: currentMember.articles[0].name)
+//           }
+//        NavigationLink {
+//            DetailView(currentMember: self.$currentMember)
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: currentMember.articles[1].name)
+//           }
+//        NavigationLink {
+//            DetailView(currentMember: self.$currentMember)
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: currentMember.articles[2].name)
+//           }
+//        NavigationLink {
+//            DetailView(currentMember: self.$currentMember)
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: currentMember.articles[3].name)
+//           }
+//        NavigationLink {
+//            DetailView(currentMember: self.$currentMember)
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: currentMember.articles[3].name)
+//           }
+//        NavigationLink {
+//            DetailView(currentMember: self.$currentMember)
+//                .navigationBarBackButtonHidden(true)
+//               } label: {
+//                   PostFormat(postName: currentMember.articles[3].name)
+//           }
+//
+//
+//    }
+//}
 
 
 struct PostFormat: View {

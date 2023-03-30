@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Binding var currentMember : MemberData
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -28,10 +29,10 @@ struct DetailView: View {
                                
                                VStack(spacing: 0){
                                    
-                                   Image("jerry")
+                                   Image(currentMember.member.imgName)
                                        .padding(.top, 57)
                                    
-                                   Text("Jerry")
+                                   Text(currentMember.member.name)
                                        .font(Font.custom("DungGeunMo", size: 30))
                                        .foregroundColor(Color.gray01)
                                        .padding(.top, 12.27)
@@ -117,7 +118,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView().previewInterfaceOrientation(.landscapeRight)
+        DetailView(currentMember: .constant(DataModal().eric)).previewInterfaceOrientation(.landscapeRight)
 
     }
 }

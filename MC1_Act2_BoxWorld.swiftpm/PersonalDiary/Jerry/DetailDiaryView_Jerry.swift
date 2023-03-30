@@ -112,10 +112,14 @@ struct DetailDiaryView_Jerry: View {
                 }
                 
                 VStack{
-                    Text("MC1 \(currentDate)")
-                        .font(Font.custom("DungGeunMo", size: 32))
-                        .foregroundColor(Color.blue02)
-                        .padding(EdgeInsets(top: -50, leading: 0, bottom: 40, trailing: 0))
+                    HStack{
+                        Text("MC1 day\(currentDate)")
+                            .font(Font.custom("DungGeunMo", size: 32))
+                            .foregroundColor(Color.blue02)
+                            .padding(.leading, 43)
+                            .padding(.top, 30.52)
+                        Spacer()
+                    }
                     
                     
                     
@@ -130,14 +134,18 @@ struct DetailDiaryView_Jerry: View {
                         Text("3테크 1디자인 1도메인 1일반인")
                             .font(Font.custom("DungGeunMo", size: 32))
                             .foregroundColor(.gray)
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
+                            .padding(EdgeInsets(top: 20.48, leading: 0, bottom: 40, trailing: 0))
                     })
                      
                     Text("귀찮으니까 음슴체로 쓰겠음\n나는 디자인과 나왔는데 디자인 잘한다고 생각 안함\n그 얘길 그리드한테 해줬더니\n아니라고 디자인 잘한다고 해주기는 커녕\n그럼 일반인하시면 되겠네요 이럼\n어이없 ; ㅋ\n그러면서 동시에 나보고 하는말이\n저희 팀은 3테크, 1디자인, 1도메인, 1일반인 으로 구성됐네요 이럼\n일반인 시러 ㅠㅠ 나 그냥 디자인할래 OTL…")
                         .kerning(3)
                         .tracking(5)
-                        .font(.system(size: 25))
+                        .font(Font.custom("NotoSansKR-Regular", size: 24))
                         .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 10))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(10)
+                    
+                    Spacer()
                     
                 }
                     .frame(width: 781, height: 661)
@@ -195,7 +203,7 @@ struct DetailDiaryView_Jerry: View {
 
 struct DetailDiaryView_Jerry_Previews: PreviewProvider {
     static var previews: some View {
-        DetailDiaryView()
+        DetailDiaryView_Jerry()
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

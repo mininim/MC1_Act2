@@ -44,7 +44,7 @@ final class DataModal{
         article(id: 21, name: "지니는 공주병 말기인거 같다", detail: "지니는 공주병 말기인거 같다 내용 "),
         article(id: 2, name: "난 지금 미쳐가고 있다. 이 헤드폰에 내 모든 몸과 영혼을...", detail: "난 지금 미쳐가고 있다. 이 헤드폰에 내 모든 몸과 영혼을... 내용ㅇ요요요요"),
         article(id: 15, name: "사람이 어떻게 그래요?", detail: "사람이 어떻게 그래요? 내용"),
-        article(id: 17, name: "3테크 1디자인 1도메인 1일반인", detail: "3테크 1디자인 1도메인 1일반인의 내요요요용"),
+        article(id: 0, name: "3테크 1디자인 1도메인 1일반인", detail: "3테크 1디자인 1도메인 1일반인의 내요요요용"),
         article(id: 18, name: "커닝시티 뒷골목의 지니..일요일! 지니는 오랜만에 친구들...", detail: "커닝시티 뒷골목의 지니...일요일! 지니는 오랜만에 친구들... 내요요요용")
         
         ])
@@ -93,9 +93,6 @@ final class DataModal{
         
         
         ])
-    
-    
-
     
     
     var eric : MemberData =

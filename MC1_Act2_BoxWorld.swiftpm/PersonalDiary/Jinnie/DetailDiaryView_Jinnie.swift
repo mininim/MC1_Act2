@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailDiaryView_Jinnie: View {
     @State
-    var currentDate: Int = 1
+    var currentDate: Int = 6
     
     var body: some View {
      
@@ -125,10 +125,15 @@ struct DetailDiaryView_Jinnie: View {
                     }
                     
                     VStack{
-                        Text("MC1 \(currentDate)")
-                            .font(Font.custom("DungGeunMo", size: 32))
-                            .foregroundColor(Color.blue02)
-                            .padding(EdgeInsets(top: -30, leading: 0, bottom: 20, trailing: 0))
+                        
+                        HStack{
+                            Text("MC1 day\(currentDate)")
+                                .font(Font.custom("DungGeunMo", size: 32))
+                                .foregroundColor(Color.blue02)
+                                .padding(.leading, 43)
+                                .padding(.top, 30.52)
+                            Spacer()
+                        }
                         
                         
                         NavigationLink(destination: DetailView_Jerry()){ //일단 제리해둠
@@ -136,22 +141,24 @@ struct DetailDiaryView_Jinnie: View {
                                 Text("술병난 지니!")
                                     .font(Font.custom("DungGeunMo", size: 32))
                                     .foregroundColor(.gray)
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                                    .padding(EdgeInsets(top: 20.48, leading: 0, bottom: 20, trailing: 0))
                                 Spacer()
                                 Image("jinnieImg")
                                     .resizable()
                                     .frame(width:250, height: 200)
-                            }.padding(EdgeInsets(top: 0, leading: 130, bottom: 0, trailing: 130))
+                            }.padding(EdgeInsets(top: 20.48, leading: 130, bottom: 0, trailing: 130))
                         }
-                        
                         
                         
                         
                         Text("일요일! 지니는 오랜만에 친구들과 만나 12시간(pm 5 to am 5)동안의 회포를 풀었습니다.\n그리고 세션참여 중 힘들어하던 지니에게 브루니가 다가와서 말했습니다.\n브루니: 커닝시티 뒷골목에 있을 거 같아요 \n지니에게 구원자인 도라가 비타민과 물을주며 다가왔습니다. \n도라 : 숙취에는 비타민과 수분섭취가 최고에요 \n지니는 그 뒤 좀 나아져 열심히 회의를 했습니다! \n[추가속보] 지니, 그 날 저녁 또 술 먹음 \n[어록] 맥주는 음료수지~")
                             .kerning(3)
                             .tracking(7)
-                            .font(.system(size: 25))
+                            .font(Font.custom("NotoSansKR-Regular", size: 24))
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 10))
+                            
+                        
+                        Spacer()
                         
                     }
                     .frame(width: 781, height: 661)
