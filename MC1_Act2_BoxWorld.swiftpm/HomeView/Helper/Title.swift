@@ -21,7 +21,14 @@ struct Title: View {
                     Text("iFARM")
                         .font(.mo(.regular, size: 30))
                         .foregroundColor(Color.orange)
+                        .onTapGesture(count: 2) {
+                            SoundPlayer.shared.stop()
+                            SoundPlayer.shared.playSound(named: "1_loading", withExtension: ".mp3")
+                            print("로딩 음원 틀기")
+                        }
             )
+            
+            
             Spacer()
             
             Button(action: {

@@ -29,17 +29,46 @@ struct Board: View {
                         
                         NavigationLink {
                             
-                            if currentMember.member.name == "BOX" {
+                            if art.id == 17 {
                                 DetailView_Jerry().navigationBarBackButtonHidden(true)
                                     .onAppear {
                                         SoundPlayer.shared.stop()
                                         SoundPlayer.shared.playSound(named: "8_JerrySSul", withExtension: ".mp3")
                                     }
+                            }else if art.id == 15 {
+                                DetailView_Eric()
+                                    .navigationBarBackButtonHidden(true)
+                                        .onAppear {
+                                            SoundPlayer.shared.stop()
+                                            SoundPlayer.shared.playSound(named: "5_EricHi", withExtension: ".mp3")
+                                        }
+                            }else if art.id == 9{
+                                DetailView_Moro()
+                                    .navigationBarBackButtonHidden(true)
+                                        .onAppear {
+                                            SoundPlayer.shared.stop()
+                                            SoundPlayer.shared.playSound(named: "9_MoroSSul", withExtension: ".mp3")
+                                        }
+                            }else if art.id == 18{
+                                DetailView_Jinnie()
+                                    .navigationBarBackButtonHidden(true)
+                                    .onAppear {
+                                        SoundPlayer.shared.stop()
+                                        SoundPlayer.shared.playSound(named: "6_JinnieSSul", withExtension: ".mp3")
+                                    }
                                 
-                                                                
+                            }else if art.id == 17 {
+                                DetailView_Jinnie2()
+                                    .navigationBarBackButtonHidden(true)
                             }else{
                                 DetailView()
+                                    .navigationBarBackButtonHidden(true)
+                                    .onAppear {
+                                        SoundPlayer.shared.stop()
+                                        
+                                    }
                             }
+                            
                             
                                } label: {
                                    PostFormat(postName: art.name)
