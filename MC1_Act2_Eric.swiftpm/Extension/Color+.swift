@@ -17,10 +17,16 @@ extension Color {
     static let gray01 = Color(hex: "A0A0A0")
     static let gray02 = Color(hex: "D9D9D9", opacity: 0.3)
     static let gray03 = Color(hex: "E6E6E6")
+    static let gray04 = Color(hex: "959595")
     
     // MARK: - grey
     
     static let blue01 = Color(hex: "49619F")
+    static let blue02 = Color(hex: "378BB0")
+    
+    // MARK: - black
+    static let black01 = Color(hex: "323131")
+    
     
 }
 
