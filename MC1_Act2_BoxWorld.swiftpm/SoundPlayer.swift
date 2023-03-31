@@ -39,6 +39,8 @@ class SoundPlayer {
     func stop() {
         player?.stop()
     }
+    
+
 }
 
 // MARK: - Usage

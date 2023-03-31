@@ -29,7 +29,9 @@ struct DetailView_Jinnie2: View {
                                VStack(spacing: 0){
                                    
                                    HStack{
-                                       Image("leftbutton")
+                                       Image("leftbutton").onTapGesture {
+                                           presentationMode.wrappedValue.dismiss()
+                                       }
  
                                        Spacer()
                                        
@@ -60,6 +62,11 @@ struct DetailView_Jinnie2: View {
                                    NavigationLink {
                                        TeamInformation()
                                            .navigationBarBackButtonHidden(false)
+                                           .onAppear{
+                                               SoundPlayer.shared.stop()
+                                               SoundPlayer.shared.playSound(named: "13_last", withExtension: ".mp3")
+                                           }
+                                
                                           
                                    } label: {
                                        Text("Home")

@@ -6,7 +6,6 @@ struct TeamInformation: View {
         
         VStack{
             
-            
             GeometryReader { geometry in
                 Color.black.edgesIgnoringSafeArea(.all)
                 
@@ -39,13 +38,35 @@ struct TeamInformation: View {
                         name(name: "저승사자    Moro")
                     }
                    
-                    Spacer().frame(height: 400)
+                    Spacer().frame(height: 100)
                     
-                    Text("때론 지치고, 때론 웃고, 때론 누구보다 열정적이었던\n             우리의 3월을 기억하며!")
+                    Text("서툴고 어려웠어도 그 누구보다 열정적이었던\n           우리의 3월을 추억하며!\n\n")
                         .font(.mo(.regular, size: 40))
                         .foregroundColor(Color.white)
                     
                     
+                    Text("우리들의 결과물!")
+                        .font(.mo(.regular, size: 30))
+                        .foregroundColor(Color.white)
+                    
+                    
+                    Text("회고 성향 테스트")
+                        .font(.mo(.regular, size: 30))
+                        .foregroundColor(Color.white)
+                    Image("smorelogo")
+                    
+                    Text("회고 방법 총집합")
+                        .font(.mo(.regular, size: 30))
+                        .foregroundColor(Color.white)
+                        .padding(.top, 50)
+                    Text("https://fog-raven-32f.notion.site/72bc94c65b994cb1ad6a9498d5e405ee")
+                    
+                        .font(.mo(.regular, size: 30))
+                        .foregroundColor(Color.white)
+                    
+                    
+                    
+                         
                     }//scrollView
                 
         
