@@ -10,6 +10,7 @@ import SwiftUI
 struct Title: View {
     @Binding var currentMember: MemberData
     
+    
     var body: some View {
         
         HStack {
@@ -21,11 +22,12 @@ struct Title: View {
                     Text("iFARM")
                         .font(.mo(.regular, size: 30))
                         .foregroundColor(Color.orange)
-                        .onTapGesture(count: 2) {
+                        .onTapGesture {
+                            
                             SoundPlayer.shared.stop()
-                            SoundPlayer.shared.playSound(named: "1_loading", withExtension: ".mp3")
-                            print("로딩 음원 틀기")
+                            
                         }
+                    
             )
             
             

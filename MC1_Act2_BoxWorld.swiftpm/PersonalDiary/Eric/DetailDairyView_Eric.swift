@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailDiaryView_Eric: View {
     @State
-    var currentDate: Int = 1
+    var currentDate: Int = 6
     
     var body: some View {
    
@@ -59,8 +59,8 @@ struct DetailDiaryView_Eric: View {
                                     dateButton(date: 2, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 3, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 4, isActive: false, currentDate: $currentDate)
-                                    dateButton(date: 5, isActive: true, currentDate: $currentDate)
-                                    dateButton(date: 6, isActive: false, currentDate: $currentDate)
+                                    dateButton(date: 5, isActive: false, currentDate: $currentDate)
+                                    dateButton(date: 6, isActive: true, currentDate: $currentDate)
                                     dateButton(date: 7, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 8, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 9, isActive: false, currentDate: $currentDate)
@@ -70,21 +70,21 @@ struct DetailDiaryView_Eric: View {
                                 
                                 HStack(spacing: 14){
                                     
-                                    dateButton(date: 10, isActive: true, currentDate: $currentDate)
+                                    dateButton(date: 10, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 11, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 12, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 13, isActive: false, currentDate: $currentDate)
-                                    dateButton(date: 14, isActive: true, currentDate: $currentDate)
+                                    dateButton(date: 14, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 15, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 16, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 17, isActive: false, currentDate: $currentDate)
-                                    dateButton(date: 18, isActive: true, currentDate: $currentDate)
+                                    dateButton(date: 18, isActive: false, currentDate: $currentDate)
                                     
                                     
                                 }
                                 
                                 HStack(spacing: 14){
-                                    dateButton(date: 19, isActive: true, currentDate: $currentDate)
+                                    dateButton(date: 19, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 20, isActive: false, currentDate: $currentDate)
                                     dateButton(date: 21, isActive: false, currentDate: $currentDate)
                                     

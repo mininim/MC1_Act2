@@ -10,6 +10,7 @@ import AVKit
 
 class SoundPlayer {
     static let shared = SoundPlayer()
+    static let backgroundPlayer = SoundPlayer()
     
     private init() { }
     

@@ -29,8 +29,18 @@ struct DetailView: View {
                                
                                VStack(spacing: 0){
                                    
-                                   Image(currentMember.member.imgName)
-                                       .padding(.top, 57)
+                                   HStack{
+                                       Image("leftbutton")
+ 
+                                       Spacer()
+                                       
+                                       Image(currentMember.member.imgName)
+                                       
+                                       Spacer()
+                                       Image("rightbutton")
+                                   }
+                                   .padding(.top, 60)
+                                   .frame(width: 278)
                                    
                                    Text(currentMember.member.name)
                                        .font(Font.custom("DungGeunMo", size: 30))
@@ -75,41 +85,42 @@ struct DetailView: View {
                                .frame(width: 395,height: 938)
                            
                            DetailDiaryView()
+                               .overlay{
+                                   Group{
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: -300)
+                                       
+                                       
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: -350)
+                                       
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: 300)
+                                       
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: 350)
+                                       
+                                   }
+                                   .offset(x: -455)
+                               }
                                .frame(width: 915, height: 938)
                            
- 
+                           
                            
                            
                        }
                        
                    }
                    
-                   
-                   Group{
-                       RoundedRectangle(cornerRadius: 5)
-                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
-                           .frame(width: 40, height: 8, alignment: .leading)
-                           .offset(x: -50, y: 150)
-                            
-
-                       RoundedRectangle(cornerRadius: 5)
-                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
-                           .frame(width: 40, height: 8, alignment: .leading)
-                           .offset(x: -50, y: 200)
-
-                       RoundedRectangle(cornerRadius: 5)
-                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
-                           .frame(width: 40, height: 8, alignment: .leading)
-                           .offset(x: -50, y: 800)
-
-                       RoundedRectangle(cornerRadius: 5)
-                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
-                           .frame(width: 40, height: 8, alignment: .leading)
-                           .offset(x: -50, y: 850)
-
-                   }
-                   .offset(x: geo.size.width * 0.325)
-                   
+                
                    
                }
 

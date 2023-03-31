@@ -11,6 +11,8 @@ struct HomeView: View {
         
         SoundPlayer.shared.playSound(named: "1_loading", withExtension: ".mp3")
         
+        SoundPlayer.backgroundPlayer.playSound(named: "boxworldbgm", withExtension: ".mp3")
+        
     }
     
     var launchScreenView: some View {

@@ -28,8 +28,28 @@ struct DetailView_Moro: View {
                                
                                VStack(spacing: 0){
                                    
-                                   Image("moro")
-                                       .padding(.top, 57)
+                                   HStack{
+                                       Image("leftbutton")
+ 
+                                       Spacer()
+                                       
+                                       Image("moro")
+                                       
+                                       Spacer()
+                                       NavigationLink(destination: {
+                                           DetailView_Eric().navigationBarBackButtonHidden(true)
+                                               .onAppear {
+                                                   SoundPlayer.shared.stop()
+                                                   SoundPlayer.shared.playSound(named: "10_EricSSul", withExtension: ".mp3")
+                                               }
+                                       }, label: {
+                                           Image("rightbutton")
+                                       })
+                                       
+                                       
+                                   }
+                                   .padding(.top, 60)
+                                   .frame(width: 278)
                                    
                                    Text("Moro")
                                        .font(Font.custom("DungGeunMo", size: 30))
@@ -74,7 +94,34 @@ struct DetailView_Moro: View {
                                .frame(width: 395,height: 938)
                            
                            DetailDiaryView_Moro()
+                               .overlay{
+                                   Group{
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: -300)
+                                       
+                                       
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: -350)
+                                       
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: 300)
+                                       
+                                       RoundedRectangle(cornerRadius: 5)
+                                           .fill( LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing))
+                                           .frame(width: 40, height: 8, alignment: .leading)
+                                           .offset(y: 350)
+                                       
+                                   }
+                                   .offset(x: -455)
+                               }
                                .frame(width: 915, height: 938)
+
                            
  
                            
