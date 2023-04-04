@@ -4,7 +4,7 @@
 //
 //  Created by Eric Lee on 2023/03/30.
 //
-
+//제리 왓다갔음 4월 4일
 import SwiftUI
 
 struct DetailDiaryView_Jerry: View {
